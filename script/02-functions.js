@@ -32,10 +32,23 @@ const yeux = () => {
     fill(255, 255, 255)
     stroke(0,0,0)
     ellipse(center.x + 50, center.y - 100, 75, 50);
+    push();
+    // scale(5)
+    rotate(PI * 2)
+    // translate(50, 50)
     ellipse(center.x - 50, center.y - 100, 75, 50);
+    pop();
 
     fill(0,0,0)
     noStroke()
     ellipse(center.x + 50, center.y - 100, 30, 30);
     ellipse(center.x - 50, center.y - 100, 30, 30);
+}
+
+const perso = () => {
+    oreils()
+    visage()
+    bouche()
+    nez()
+    yeux()
 }
