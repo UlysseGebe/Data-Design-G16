@@ -18,14 +18,14 @@ function setup() {
 function draw() {
     colorMode(RGB, 100);
     background(10);
-    for (let i = 0; i < 30; i++) {
+    for (let i = 1; i < 30; i++) {
         let step = windowWidth / 30
         push();
         stroke(int(random(100)), int(random(100)), int(random(100)));
         line(step * i, 0, step * i, windowWidth);
         pop();
     }
-    for (let i = 0; i < 20; i++) {
+    for (let i = 1; i < 20; i++) {
         let step = windowHeight / 20
         push();
         stroke(int(random(100)), int(random(100)), int(random(100)));
