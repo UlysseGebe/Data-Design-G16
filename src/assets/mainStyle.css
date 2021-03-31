@@ -1,0 +1,45 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap'); */
+
+#app {
+    --primary-light   : #04BEFE ;
+    --secondary-light : #4481EB ;
+    --primary-dark    : #404971 ;
+    --secondary-dark  : #3F3D56 ;
+    --primary-white   : #FFFFFF;
+
+    --tiny    : 8px;
+    --small   : 16px;
+    --base    : 24px;
+    --large   : 32px;
+    --x-large : 40px;
+
+    --title    : 55pt;
+    --subtitle : 35pt;
+    --button   : 26pt;
+    --text     : 20pt;
+}
+
+.title {
+    size: var(--title);
+    font-family: 'Avenir', sans-serif;
+    font-weight: 900;
+}
+
+.subtitle {
+    size: var(--subtitle);
+    font-family: 'Avenir', sans-serif;
+    font-weight: 900;
+}
+
+.button {
+    size: var(--button);
+    font-family: 'Avenir', sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.text {
+    size: var(--text);
+    font-family: 'Avenir', sans-serif;
+    font-weight: 400;
+}
