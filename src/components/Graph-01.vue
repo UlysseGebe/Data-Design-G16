@@ -15,7 +15,6 @@
 import Chart from 'chart.js'
 
 const test = (nb) => {
-  // window.addEventListener('load', () => {
     const canvas = document.querySelector('.Graph01 .container canvas')
     if (!canvas) {
       if (nb == 0) { return "#4377D4" }
@@ -33,7 +32,6 @@ const test = (nb) => {
       gradient.addColorStop(1, "#4481EB")
     }
     return gradient
-  // })
 }
 
 export default {
@@ -69,6 +67,13 @@ export default {
               }
             }
           ]
+        },
+        legend: {
+          position: "bottom",
+          labels: {
+            fontSize: 22,
+            padding: 75,
+          },
         }
       }
     }
@@ -99,6 +104,7 @@ export default {
 .Graph01 .container {
   width: 90%;
   padding-left: 5%;
+  margin-top: 40px;
 }
 
 .Graph01 .container canvas {
