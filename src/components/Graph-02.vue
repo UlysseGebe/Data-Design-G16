@@ -1,7 +1,7 @@
 <template>
   <div class="Graph02 dark">
-    <h2 class="title" >Quelques chiffres depuis le début....</h2>
-    <p class="text">Nombre d’hommes et de femmes recrutés dans les métiers de l’aérospatiale dans le monde</p>
+    <h2 class="title" >Nombre de femmes dans la NASA</h2>
+    <p class="text">Depuis le début de l'exploration spatiale, il y a eu un total de 64 femmes et de 505 hommes qui ont participé à des missions spatiales.</p>
   </div>
 </template>
 

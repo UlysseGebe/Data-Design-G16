@@ -1,7 +1,7 @@
 <template>
   <div class="Graph04 dark">
-    <h2 class="title" >Quelques chiffres depuis le début....</h2>
-    <p class="text">Nombre d’hommes et de femmes recrutés dans les métiers de l’aérospatiale dans le monde</p>
+    <h2 class="title" >Les cercles de l’aérospatiale</h2>
+    <p class="text">“<span class="blue">Beaucoup de technologies</span> devront faire partie des fusées du futur : l’IA, la connectivité... Il faut de la diversité dans les équipes pour maîtriser la conception, la production et l’entretien. Les femmes contribuent à cette diversité en créant de l’émulation dans les équipes”</p>
   </div>
 </template>
 
