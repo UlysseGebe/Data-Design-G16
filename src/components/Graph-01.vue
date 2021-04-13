@@ -16,6 +16,12 @@ import Chart from 'chart.js/auto';
 
 export default {
   name: 'Graph01',
+  props: {
+    dataGraph01_Woman: Object,
+    dataGraph01_Man: Object,
+    dataGraph01_Woman2: Object,
+    dataGraph01_Man2: Object,
+  },
   data: () => ({
     planetChartData : {
       type: "bar",
@@ -77,12 +83,12 @@ export default {
       datasets: [
         {
           label: "Homme",
-          data: [8, 11, 24, 16, 31, 55, 42, 46, 25, 7, 10, 16, 21, 12],
+          data: this.dataGraph01_Man,
           backgroundColor: test(0),
         },
         {
           label: "Femme",
-          data: [0, 0, 0, 0, 3, 8, 13, 18, 12, 2, 4, 8, 7],
+          data: this.dataGraph01_Woman,
           backgroundColor: test(1),
         }
       ]
@@ -93,12 +99,12 @@ export default {
       datasets: [
         {
           label: "Homme",
-          data: [14, 19, 16, 16, 10, 10, 10],
+          data: this.dataGraph01_Man2,
           backgroundColor: test(0),
         },
         {
           label: "Femme",
-          data: [2, 2, 5, 1, 2, 2, 2],
+          data: this.dataGraph01_Woman2,
           backgroundColor: test(1),
         }
       ]

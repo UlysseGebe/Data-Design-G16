@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Presentation />
-    <Graph-01 />
+    <Graph-01 :dataGraph01_Woman="this.woman" :dataGraph01_Man="this.man" :dataGraph01_Woman2="this.woman2" :dataGraph01_Man2="this.man2" />
     <Graph-02 />
     <Graph-03 :dataGraph03="this.getWomanByCountry" />
     <Graph-04 />
@@ -30,6 +30,8 @@ export default {
     Graph05,
   },
   props: [
+    'dataGraph01_Woman',
+    'dataGraph01_Man',
     'dataGraph03'
   ],
   beforeMount () {
@@ -73,6 +75,77 @@ export default {
       this.getWomanByCountry = countries
     }
     getWomanByCountry()
+
+    const getWoman = () => {
+      let dates = {"1960": [0, 0], "1965": [0, 0], "1970": [0, 0], "1975": [0, 0], "1980": [0, 0], "1985": [0, 0], "1990": [0, 0], "1995": [0, 0], "2000": [0, 0], "2005": [0, 0], "2010": [0, 0], "2015": [0, 0], "2020": [0, 0]}
+      for (let i = 0; i < dataJson.length; i++) {
+        const data = dataJson[i];
+        let secondTab = data.Flights.split(/\(([^()]+)\)/);
+        for (let j = 0; j < secondTab.length; j++) {
+          const int = secondTab[j];
+          for (const key in dates) {
+            if (Object.hasOwnProperty.call(dates, key)) {
+              if (parseInt(key) == parseInt(int)) {
+                if (data.Gender == "Woman") {
+                  dates[key][0] += 1
+                }
+                if (data.Gender == "Man") {
+                  dates[key][1] += 1
+                }
+              }
+            }
+          }
+        }
+      }
+      let man = {}
+      let woman = {}
+      for (const key in dates) {
+        if (Object.hasOwnProperty.call(dates, key)) {
+          const element = dates[key];
+          woman[key] = element[0]
+          man[key] = element[1]
+        }
+      }
+      this.man = man
+      this.woman = woman
+    }
+    getWoman()
+    
+    const getWoman2 = () => {
+      let dates = {"2014": [0, 0], "2015": [0, 0], "2016": [0, 0], "2017": [0, 0], "2018": [0, 0], "2019": [0, 0], "2020": [0, 0]}
+      for (let i = 0; i < dataJson.length; i++) {
+        const data = dataJson[i];
+        let secondTab = data.Flights.split(/\(([^()]+)\)/);
+        for (let j = 0; j < secondTab.length; j++) {
+          const int = secondTab[j];
+          for (const key in dates) {
+            if (Object.hasOwnProperty.call(dates, key)) {
+              if (parseInt(key) == parseInt(int)) {
+                if (data.Gender == "Woman") {
+                  dates[key][0] += 1
+                }
+                if (data.Gender == "Man") {
+                  dates[key][1] += 1
+                }
+              }
+            }
+          }
+        }
+      }
+      let man = {}
+      let woman = {}
+      for (const key in dates) {
+        if (Object.hasOwnProperty.call(dates, key)) {
+          const element = dates[key];
+          woman[key] = element[0]
+          man[key] = element[1]
+        }
+      }
+      
+      this.man2 = man
+      this.woman2 = woman
+    }
+    getWoman2()
   }
 }
 </script>
