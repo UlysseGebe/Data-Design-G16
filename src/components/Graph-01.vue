@@ -98,7 +98,7 @@ export default {
         },
         {
           label: "Femme",
-          data: [2, 2, 5, 1, 2, 2],
+          data: [2, 2, 5, 1, 2, 2, 2],
           backgroundColor: test(1),
         }
       ]
