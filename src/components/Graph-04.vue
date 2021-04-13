@@ -1,10 +1,14 @@
 <template>
   <div class="Graph04 dark">
-    <h2 class="title" >Les cercles de l’aérospatiale</h2>
+    <h2 class="subtitle" >Les cercles de l’aérospatiale</h2>
     <div class="text">
       <p>
         "<span class="blue">Beaucoup de technologies</span> devront faire partie des fusées du futur : l’IA, la connectivité... Il faut de la diversité dans les équipes pour maîtriser la conception, la production et l’entretien. Les femmes contribuent à cette diversité en créant de l’émulation dans les équipes"
       </p>
+      <div class="auteur" style="text-align:right">
+        <b>Valérie Gobertière</b><br/>
+        <i>Responsable Chantiers  Industriels Air France</i>
+      </div>
     </div>
     <div class="circle circle-small">
       <div class="text">23</div>
@@ -78,8 +82,9 @@ export default {
 
 .Graph04 > .text {
   position: relative;
-  max-width: 550px;
-  margin: 0 auto;
+  max-width: 910px;
+  margin: 0 auto 48px auto;
+  padding: 0 8px;
 }
 
 .Graph04 > .text p { position: relative }
@@ -87,8 +92,8 @@ export default {
 .Graph04 > .text::before {
   content: "";
   position: absolute;
-  top: -60%;
-  left: -30%;
+  top: -40%;
+  left: -15%;
   background-image: url(../assets/images/quote.svg);
   background-position: center;
   background-repeat: no-repeat;

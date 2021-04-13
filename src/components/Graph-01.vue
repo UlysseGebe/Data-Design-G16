@@ -1,6 +1,6 @@
 <template>
   <div class="Graph01" id="first-data">
-    <h2 class="title" >Quelques chiffres depuis le début....</h2>
+    <h2 class="subtitle" >Quelques chiffres depuis le début....</h2>
     <p class="text">Nombre d’hommes et de femmes recrutés dans les métiers de l’aérospatiale dans le monde</p>
     <div class="container">
       <canvas></canvas>
@@ -132,6 +132,12 @@ export default {
   width: 100%;
   height: fit-content;
   padding: 75px 0 8rem 0;
+}
+
+.Graph01 .text {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 8px;
 }
 
 .Graph01 .container {

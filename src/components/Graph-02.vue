@@ -1,6 +1,6 @@
 <template>
   <div class="Graph02 dark">
-    <h2 class="title" >Nombre de femmes dans la NASA</h2>
+    <h2 class="subtitle" >Nombre de femmes dans la NASA</h2>
     <p class="text">En 1969, plus d’une centaine d’hommes ont participé à des missions spatiales contre 0 du côté féminin. 
 <br/><br/>
 Un écart qui s’est de plus en plus réduit ces dernières années, notamment avec un nombre égal d’hommes et de femmes sollicités dans l’industrie en 2013.</p>
@@ -123,6 +123,12 @@ export default {
   bottom: 0;
   height: 104px;
   background-image: url('../assets/images/backgroundBottom.svg');
+}
+
+.Graph02 .text {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 8px;
 }
 
 .Graph02 .container {

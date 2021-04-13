@@ -1,26 +1,26 @@
 <template>
     <div class="Graph03">
-        <h2 class="title">Quelques chiffres depuis le début....</h2>
+        <h2 class="subtitle">Quelques chiffres depuis le début....</h2>
         <p class="text">Les Etats-Unis sont le premier et unique pays à avoir autant d’hommes que de femmes dans l’industrie aérospatiale durant ces dernières années. En Europe, seuls la France et la Suède tendent à se rapprocher d’une totale parité.</p>
         <div class="container">
-          <div class="bar"><progress :value="this.dataGraph03['Canada'][0]" :max="this.dataGraph03['Canada'][1]">Canada</progress><span>Canada</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['South Korea'][0]" :max="this.dataGraph03['South Korea'][1]">Corée du Sud</progress><span>Corée du Sud</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['Spain'][0]" :max="this.dataGraph03['Spain'][1]">Espagne</progress><span>Espagne</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['Iran'][0]" :max="this.dataGraph03['Iran'][1]">Iran</progress><span>Iran</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['France'][0]" :max="this.dataGraph03['France'][1]">France</progress><span>France</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['United States'][0]" :max="this.dataGraph03['United States'][1]">États-Unis</progress><span>États-Unis</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['United Kingdom'][0]" :max="this.dataGraph03['United Kingdom'][1]">Royaume-Uni</progress><span>Royaume-Uni</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['Denmark'][0]" :max="this.dataGraph03['Denmark'][1]">Danemark</progress><span>Danemark</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['Soviet Union'][0]" :max="this.dataGraph03['Soviet Union'][1]">Union Soviétique</progress><span>Union Soviétique</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['Sweden'][0]" :max="this.dataGraph03['Sweden'][1]">Suède</progress><span>Suède</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['Cuba'][0]" :max="this.dataGraph03['Cuba'][1]">Cuba</progress><span>Cuba</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['South Africa'][0]" :max="this.dataGraph03['South Africa'][1]">Afrique du Sud</progress><span>Afrique du Sud</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['Japan'][0]" :max="this.dataGraph03['Japan'][1]">Japon</progress><span>Japon</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['Italy'][0]" :max="this.dataGraph03['Italy'][1]">Italie</progress><span>Italie</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['United Arab Emirates'][0]" :max="this.dataGraph03['United Arab Emirates'][1]">Emirats Arabes Unis</progress><span>Emirats Arabes Unis</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['China'][0]" :max="this.dataGraph03['China'][1]">Chine</progress><span>Chine</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['India'][0]" :max="this.dataGraph03['India'][1]">Inde</progress><span>Inde</span></div>
-          <div class="bar"><progress :value="this.dataGraph03['Russia'][0]" :max="this.dataGraph03['Russia'][1]">Russie</progress><span>Russie</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['Canada'][0]" :max="this.dataGraph03['Canada'][1]">Canada</progress><span class="text">Canada</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['South Korea'][0]" :max="this.dataGraph03['South Korea'][1]">Corée du Sud</progress><span class="text">Corée du Sud</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['Spain'][0]" :max="this.dataGraph03['Spain'][1]">Espagne</progress><span class="text">Espagne</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['Iran'][0]" :max="this.dataGraph03['Iran'][1]">Iran</progress><span class="text">Iran</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['France'][0]" :max="this.dataGraph03['France'][1]">France</progress><span class="text">France</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['United States'][0]" :max="this.dataGraph03['United States'][1]">États-Unis</progress><span class="text">États-Unis</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['United Kingdom'][0]" :max="this.dataGraph03['United Kingdom'][1]">Royaume-Uni</progress><span class="text">Royaume-Uni</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['Denmark'][0]" :max="this.dataGraph03['Denmark'][1]">Danemark</progress><span class="text">Danemark</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['Soviet Union'][0]" :max="this.dataGraph03['Soviet Union'][1]">Union Soviétique</progress><span class="text">Union Soviétique</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['Sweden'][0]" :max="this.dataGraph03['Sweden'][1]">Suède</progress><span class="text">Suède</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['Cuba'][0]" :max="this.dataGraph03['Cuba'][1]">Cuba</progress><span class="text">Cuba</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['South Africa'][0]" :max="this.dataGraph03['South Africa'][1]">Afrique du Sud</progress><span class="text">Afrique du Sud</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['Japan'][0]" :max="this.dataGraph03['Japan'][1]">Japon</progress><span class="text">Japon</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['Italy'][0]" :max="this.dataGraph03['Italy'][1]">Italie</progress><span class="text">Italie</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['United Arab Emirates'][0]" :max="this.dataGraph03['United Arab Emirates'][1]">Emirats Arabes Unis</progress><span class="text">Emirats Arabes Unis</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['China'][0]" :max="this.dataGraph03['China'][1]">Chine</progress><span class="text">Chine</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['India'][0]" :max="this.dataGraph03['India'][1]">Inde</progress><span class="text">Inde</span></div>
+          <div class="bar"><progress :value="this.dataGraph03['Russia'][0]" :max="this.dataGraph03['Russia'][1]">Russie</progress><span class="text">Russie</span></div>
         </div>
     </div>
 </template>
@@ -43,13 +43,14 @@ export default {
 }
 
 .Graph03 > .text {
-  max-width: 575px;
+  max-width: 980px;
   margin: 0 auto;
+  padding: 0 8px;
 }
 
 .container {
   position: relative;
-  min-height: 750px;
+  min-height: 900px;
   transform: rotate(-80deg)
 }
 

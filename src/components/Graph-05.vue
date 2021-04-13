@@ -1,6 +1,6 @@
 <template>
   <div class="Graph05">
-    <h2 class="title" >Les plus longs vols réalisés par des femmes</h2>
+    <h2 class="subtitle" >Les plus longs vols réalisés par des femmes</h2>
     <p class="text">Voici les plus longs vols réalisés en heures par des femmes dans des satellites ou des fusées, depuis le début de l’aérospatiale.</p>
     <div class="container">
       <canvas></canvas>

@@ -31,15 +31,15 @@ export default {
 <style scoped>
 .Presentation {
   width: 100%;
-  height: 100vh;
-  min-height: 400px;
+  height: fit-content;
+  min-height: 100vh;
   background: linear-gradient(to right, #4481EB 0%, #3F3D56 60%, #3F3D56 100%);
   display: flex;
   position: relative;
 }
 
 .left {
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,12 +47,13 @@ export default {
 }
 
 .left p {
-  max-width: 410px;
+  max-width: 670px;
 }
 
 .right {
-  width: 40%;
-  height: 100%;
+  width: 30%;
+  height: auto;
+  min-height: 100vh;
   background-image: url('../assets/images/rocket_moon.svg');
   background-position: left bottom;
   background-repeat: no-repeat;
