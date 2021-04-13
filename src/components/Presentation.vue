@@ -73,8 +73,8 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0;
-  -webkit-animation: anim 2s ease-in;
-          animation: anim 2s ease-in;
+  -webkit-animation: anim 5s ease-in-out;
+          animation: anim 5s ease-in-out;
 }
 
 .arrowNext {
