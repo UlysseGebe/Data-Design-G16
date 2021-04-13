@@ -97,13 +97,17 @@ export default {
 
     this.planetChartData.options.animation = animation
 
+    let chartBool = true
+
     window.addEventListener('scroll', () => {
-      if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0) {
+      if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0 && chartBool) {
         new Chart(ctx, this.planetChartData);
+        chartBool = false
       }
     });
-    if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0) {
+    if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0 && chartBool) {
       new Chart(ctx, this.planetChartData);
+      chartBool = false
     }
   }
 }

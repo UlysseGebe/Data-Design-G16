@@ -106,13 +106,16 @@ export default {
 
     this.planetChartData.data = data1
     let chart
+    let chartBool = true
     window.addEventListener('scroll', () => {
-      if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0) {
+      if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0 && chartBool) {
         chart = new Chart(ctx, this.planetChartData);
+        chartBool = false
       }
     });
-    if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0) {
+    if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0 && chartBool) {
       chart = new Chart(ctx, this.planetChartData);
+      chartBool = false
     }
 
     function changeData(check) {

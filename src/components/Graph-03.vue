@@ -32,12 +32,15 @@ export default {
     dataGraph03: Object
   },
   mounted () {
+    const graph = document.querySelector('.Graph03 .container')
     window.addEventListener('scroll', () => {
-      const graph = document.querySelector('.Graph03 .container')
-      if (graph.getClientRects()[0].top - graph.getClientRects()[0].width + graph.getClientRects()[0].height < 10) {
+      if (graph.getClientRects()[0].top - graph.getClientRects()[0].width + graph.getClientRects()[0].height - window.innerHeight / 4 < 10) {
         graph.classList.add('view')
       }
     });
+    if (graph.getClientRects()[0].top - graph.getClientRects()[0].width + graph.getClientRects()[0].height - window.innerHeight / 4 < 10) {
+      graph.classList.add('view')
+    }
   },
 }
 </script>

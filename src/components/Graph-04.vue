@@ -85,8 +85,8 @@
 export default {
   name: 'Graph04',
   mounted () {
+    const graphs = document.querySelectorAll('.Graph04 .circle')
     window.addEventListener('scroll', () => {
-      const graphs = document.querySelectorAll('.Graph04 .circle')
       for (let i = 0; i < graphs.length; i++) {
         const graph = graphs[i];
         if (graph.getClientRects()[0].top - window.innerHeight / 2 < 0) {
@@ -94,6 +94,12 @@ export default {
         }
       }
     });
+    for (let i = 0; i < graphs.length; i++) {
+      const graph = graphs[i];
+      if (graph.getClientRects()[0].top - window.innerHeight / 2 < 0) {
+        graph.classList.add('view')
+      }
+    }
   }
 }
 </script>
