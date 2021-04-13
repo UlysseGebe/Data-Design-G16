@@ -85,6 +85,11 @@ export default {
   text-align: center;
 }
 
+.arrowNext img {
+  position: relative;
+  z-index: 9999;
+}
+
 @keyframes anim {
   from {
     opacity: 1;
