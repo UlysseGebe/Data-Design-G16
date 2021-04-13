@@ -138,10 +138,10 @@ export default {
 
     button.addEventListener('click', () => {
       changeData(button.getAttribute('val'))
-      if (button.innerHTML == "En voir plus") {
+      if (button.getAttribute('val') == "1") {
         button.innerHTML = "En voir moins"
       }
-      if (button.innerHTML == "En voir moins") {
+      if (button.getAttribute('val') == "0") {
         button.innerHTML = "En voir plus"
       }
     })
