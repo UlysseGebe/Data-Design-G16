@@ -1,7 +1,7 @@
 <template>
   <div class="Graph01" id="first-data">
     <h2 class="subtitle" >Quelques chiffres depuis le début....</h2>
-    <p class="text">Nombre d’hommes et de femmes recrutés dans les métiers de l’aérospatiale dans le monde</p>
+    <p class="text">En bleu foncé et clair, le nombre d’hommes et de femmes recrutés dans les métiers de l’aérospatiale de 1965 à 2020 (tous pays confondus).</p>
     <div class="container">
       <canvas></canvas>
     </div>
@@ -79,7 +79,7 @@ export default {
     }
 
     let data1 = {
-      labels: ["1960", "1965", "1970", "1975", "1980", "1985", "1990", "1995", "2000", "2005", "2010", "2015", "2020"],
+      labels: ["1965", "1970", "1975", "1980", "1985", "1990", "1995", "2000", "2005", "2010", "2015", "2020"],
       datasets: [
         {
           label: "Homme",
