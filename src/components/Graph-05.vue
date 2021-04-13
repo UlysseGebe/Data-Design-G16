@@ -123,7 +123,6 @@ export default {
         tooltipEl.style.position = 'absolute';
         tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX;
         tooltipEl.style.left = ctx.offsetWidth * 0.38 - tooltipEl.style.left + 'px'
-        console.log(tooltipEl.style.left);
         tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY - 12.5 + 'px';
         tooltipEl.style.padding = tooltipModel.padding + 'px ' + tooltipModel.padding + 'px';
         tooltipEl.style.pointerEvents = 'none';
