@@ -77,12 +77,12 @@ export default {
       datasets: [
         {
           label: "Homme",
-          data: [79, 82, 27, 14],
+          data: [8, 11, 24, 16, 31, 55, 42, 46, 25, 7, 10, 16, 21, 12],
           backgroundColor: test(0),
         },
         {
           label: "Femme",
-          data: [95, 28, 43, 51],
+          data: [0, 0, 0, 0, 3, 8, 13, 18, 12, 2, 4, 8, 7],
           backgroundColor: test(1),
         }
       ]
@@ -93,12 +93,12 @@ export default {
       datasets: [
         {
           label: "Homme",
-          data: [95, 28, 43, 51],
+          data: [14, 19, 16, 16, 10, 10, 10],
           backgroundColor: test(0),
         },
         {
           label: "Femme",
-          data: [79, 82, 27, 14],
+          data: [2, 2, 5, 1, 2, 2],
           backgroundColor: test(1),
         }
       ]
