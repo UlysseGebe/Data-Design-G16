@@ -1,5 +1,5 @@
 <template>
-  <div class="Presentation dark">
+  <div class="Presentation dark" id="Presentation">
     <div class="left">
       <h1 class="title">Les femmes dans l’aérospatiale</h1>
       <p class="text">
@@ -17,13 +17,13 @@
 export default {
   name: 'Presentation',
   methods: {
-  scrollTo(id) {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({behavior: 'smooth'});
+    scrollTo(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({behavior: 'smooth'});
+      }
     }
   }
-}
 }
 </script>
 
@@ -57,6 +57,21 @@ export default {
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+
+.right::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/rocket_stat.svg');
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  -webkit-animation: anim 2s ease-in;
+          animation: anim 2s ease-in;
 }
 
 .arrowNext {
@@ -65,6 +80,15 @@ export default {
   left: 0;
   right: 0;
   text-align: center;
+}
+
+@keyframes anim {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 </style>
