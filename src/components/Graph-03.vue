@@ -30,7 +30,15 @@ export default {
   name: 'Graph03',
   props: {
     dataGraph03: Object
-  }
+  },
+  mounted () {
+    window.addEventListener('scroll', () => {
+      const graph = document.querySelector('.Graph03 .container')
+      if (graph.getClientRects()[0].top - graph.getClientRects()[0].width + graph.getClientRects()[0].height < 10) {
+        graph.classList.add('view')
+      }
+    });
+  },
 }
 </script>
 
@@ -40,6 +48,7 @@ export default {
   width: 100%;
   height: fit-content;
   padding: 75px 0 40px 0;
+  overflow: hidden;
 }
 
 .Graph03 > .text {
@@ -54,15 +63,38 @@ export default {
   transform: rotate(-80deg)
 }
 
+@media (max-width: 900px) {
+  .container {
+    transform: rotate(-80deg) scale(0.75);
+    min-height: 630px;
+  }
+}
+
+@media (max-width: 655px) {
+  .container {
+    transform: rotate(-80deg) scale(0.5);
+    min-height: 400px;
+  }
+}
+
 .container .bar {
   position: absolute;
   top: 50%;
   left: 50%;
   transform-origin: 0 50%;
+  padding-left: 0;
+  white-space: nowrap;
+  transition: padding-left 1s ease-out 0.5s;
+}
+
+.container.view .bar {
   padding-left: 75px;
 }
 
-.container .bar span {display: inline-block;}
+.container .bar span {
+  display: inline-block;
+  white-space: nowrap;
+}
 
 .container .bar:first-child   {transform: rotate(0)}
 .container .bar:nth-child(2)  {transform: rotate(20deg)}
@@ -133,7 +165,7 @@ progress::-webkit-progress-value {
   border-radius: 4px; 
 }
 
-progress:hover:before {
+progress:before {
   display: flex;
   position: absolute;
   content: attr(value);
@@ -144,8 +176,10 @@ progress:hover:before {
   left: 0;
   align-items: center;
   color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
-progress:hover:after {
+progress:after {
   display: flex;
   position: absolute;
   content: attr(max);
@@ -155,5 +189,11 @@ progress:hover:after {
   top: 0;
   right: 0;
   align-items: center;
+  opacity: 0;
+}
+
+progress:hover:before,
+progress:hover:after {
+  opacity: 1;
 }
 </style>

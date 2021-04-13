@@ -27,7 +27,8 @@ export default {
             backgroundColor: '#4377D4',
             fill: true,
             borderWidth: 0,
-            pointRadius: 0.2,
+            pointRadius: 0,
+            pointHitRadius: 30
           },
           {
             label: "Homme",
@@ -35,7 +36,8 @@ export default {
             backgroundColor: '#04BEFE',
             fill: true,
             borderWidth: 0,
-            pointRadius: 0.2,
+            pointRadius: 0,
+            pointHitRadius: 10
           },
         ]
       },
@@ -76,12 +78,33 @@ export default {
     this.planetChartData.data.datasets[0].backgroundColor = test(1)
     this.planetChartData.data.datasets[1].backgroundColor = test(0)
 
-    new Chart(ctx, this.planetChartData);
-    
+    const previousY = 10
+    const animation = {
+      x: {
+        type: 'number',
+        easing: 'easeInOutQuad',
+        duration: 3000,
+        delay: 1000
+      },
+      y: {
+        type: 'number',
+        easing: 'easeInOutQuad',
+        duration: 3000,
+        from: previousY,
+        delay: 1000
+      }
+    };
 
-    window.addEventListener('resize', () => {
-      
-    })
+    this.planetChartData.options.animation = animation
+
+    window.addEventListener('scroll', () => {
+      if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0) {
+        new Chart(ctx, this.planetChartData);
+      }
+    });
+    if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0) {
+      new Chart(ctx, this.planetChartData);
+    }
   }
 }
 </script>

@@ -45,7 +45,7 @@ export default {
               font: {
                 size: 22,
               },
-              padding: 75,
+              padding: 50,
               usePointStyle: true,
             },
           }
@@ -105,7 +105,15 @@ export default {
     }
 
     this.planetChartData.data = data1
-    let chart = new Chart(ctx, this.planetChartData);
+    let chart
+    window.addEventListener('scroll', () => {
+      if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0) {
+        chart = new Chart(ctx, this.planetChartData);
+      }
+    });
+    if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0) {
+      chart = new Chart(ctx, this.planetChartData);
+    }
 
     function changeData(check) {
       if (check == "0") {

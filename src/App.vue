@@ -101,6 +101,10 @@ html, body {
   color: #FFF;
 }
 
+.customTool {
+  transition: opacity 0.5s ease;
+}
+
 div[class*="Graph"] { text-align: center }
 .dark * { color: var(--primary-white) }
 

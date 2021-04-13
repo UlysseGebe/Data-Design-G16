@@ -39,11 +39,13 @@ export default {
 }
 
 .left {
-  width: 70%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 130px;
+  position: relative;
+  z-index: 1;
 }
 
 .left p {
@@ -51,7 +53,7 @@ export default {
 }
 
 .right {
-  width: 30%;
+  width: 40%;
   height: auto;
   min-height: 100vh;
   background-image: url('../assets/images/rocket_moon.svg');
@@ -89,6 +91,41 @@ export default {
   }
   to {
     opacity: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .left {
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .left {
+    padding-left: 75px;
+  }
+}
+
+@media (max-width: 800px) {
+  .left {
+    padding-left: 50px;
+  }
+}
+
+@media (max-width: 630px) {
+  .right {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.75;
+  }
+
+  .left {
+    width: 100%;
+    padding: 0 24px;
   }
 }
 

@@ -10,7 +10,8 @@
         <i>Responsable Chantiers  Industriels Air France</i>
       </div>
     </div>
-    <div class="circle circle-small">
+    <div class="container">
+      <div class="circle circle-small">
       <div class="text">23</div>
       <svg>
           <circle class="bg" cx="115" cy="115" r="110"></circle>
@@ -18,56 +19,82 @@
               <!-- -1 * (700 * n - 700 - 5) | n -> % entre 0 et 1 -->
           </circle>
       </svg>
-    </div>
-    <div class="space"></div>
-    <div class="circle circle-small">
-      <div class="text">16</div>
+      </div>
+      <div class="space"></div>
+      <div class="circle circle-small">
+        <div class="text">16</div>
+          <svg>
+              <circle class="bg" cx="115" cy="115" r="110"></circle>
+              <circle class="progress" cx="115" cy="115" r="110" stroke-dashoffset="593">
+                  <!-- -1 * (700 * n - 700 - 5) | n -> % entre 0 et 1 -->
+              </circle>
+          </svg>
+      </div>
+      <div class="space"></div>
+      <div class="circle circle-small">
+        <div class="text">62</div>
+        <svg>
+            <circle class="bg" cx="115" cy="115" r="110"></circle>
+            <circle class="progress" cx="115" cy="115" r="110" stroke-dashoffset="271">
+                <!-- -1 * (700 * n - 700 - 5) | n -> % entre 0 et 1 -->
+            </circle>
+        </svg>
+      </div>
+      <div class="space"></div>
+      <div class="circle circle-small">
+        <div class="text">16</div>
         <svg>
             <circle class="bg" cx="115" cy="115" r="110"></circle>
             <circle class="progress" cx="115" cy="115" r="110" stroke-dashoffset="593">
                 <!-- -1 * (700 * n - 700 - 5) | n -> % entre 0 et 1 -->
             </circle>
         </svg>
+      </div>
+      <h2 class="subtitle" style="margin-top: 120px">Total</h2>
+      <div class="circle circle-big">
+        <div class="text">23</div>
+        <svg>
+            <circle class="bg" cx="175" cy="175" r="160"></circle>
+            <circle class="progress" cx="175" cy="175" r="160">
+                <!-- -1 * (1005 * n - 1005 - 2.5) | n -> % entre 0 et 1 -->
+            </circle>
+        </svg>
+      </div>
+      <p class="text" style="max-width: 675px; margin: 52px auto 0 auto;">
+        Hausse de 18 à 23 % en 10 ans. 3 000 femmes recrutées en 2018. Soit 25% des effectifs.
+      </p>
+      <div class="legend">
+        <div class="item text" style="text-align: left">
+          <span class="title">23%</span><br/>des femmes sont<br/>ingénieures
+        </div>
+        <div class="item text" style="text-align: right">
+          <span class="title">16%</span><br/>des femmes sont<br/>techniciennes /<br/>agents de maîtrise
+        </div>
+        <div class="item text" style="text-align: left">
+          <span class="title">62%</span><br/>des femmes sont<br/>employées
+        </div>
+        <div class="item text" style="text-align: right">
+          <span class="title">16%</span><br/>des femmes sont<br/>ouvrières
+        </div>
+      </div>
     </div>
-    <div class="space"></div>
-    <div class="circle circle-small">
-      <div class="text">62</div>
-      <svg>
-          <circle class="bg" cx="115" cy="115" r="110"></circle>
-          <circle class="progress" cx="115" cy="115" r="110" stroke-dashoffset="271">
-              <!-- -1 * (700 * n - 700 - 5) | n -> % entre 0 et 1 -->
-          </circle>
-      </svg>
-    </div>
-    <div class="space"></div>
-    <div class="circle circle-small">
-      <div class="text">16</div>
-      <svg>
-          <circle class="bg" cx="115" cy="115" r="110"></circle>
-          <circle class="progress" cx="115" cy="115" r="110" stroke-dashoffset="593">
-              <!-- -1 * (700 * n - 700 - 5) | n -> % entre 0 et 1 -->
-          </circle>
-      </svg>
-    </div>
-    <h2>Total</h2>
-    <div class="circle circle-big">
-      <div class="text">23</div>
-      <svg>
-          <circle class="bg" cx="175" cy="175" r="160"></circle>
-          <circle class="progress" cx="175" cy="175" r="160">
-              <!-- -1 * (1005 * n - 1005 - 2.5) | n -> % entre 0 et 1 -->
-          </circle>
-      </svg>
-    </div>
-    <p>
-      Hausse de 18 à 23 % en 10 ans. 3 000 femmes recrutées en 2018. Soit 25% des effectifs.
-    </p>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Graph04',
+  mounted () {
+    window.addEventListener('scroll', () => {
+      const graphs = document.querySelectorAll('.Graph04 .circle')
+      for (let i = 0; i < graphs.length; i++) {
+        const graph = graphs[i];
+        if (graph.getClientRects()[0].top - window.innerHeight / 2 < 0) {
+          graph.classList.add('view')
+        }
+      }
+    });
+  }
 }
 </script>
 
@@ -100,6 +127,11 @@ export default {
   background-size: contain;
   width: 264px;
   height: 174px;
+}
+
+.Graph04 .container {
+  padding-bottom: 84px;
+  position: relative;
 }
 
 .space {
@@ -145,6 +177,25 @@ export default {
 .circle-small .progress {
   stroke-width: 10px;
   stroke-dasharray: 700;
+  opacity: 0;
+  transition: opacity;
+  transition-delay: 0.5s;
+  will-change: opacity;
+}
+.circle-small.view .progress { opacity: 1; }
+
+.circle-small.view:first-child .progress {
+  -webkit-animation: ani01 1.5s ease-in-out 0.5s;
+          animation: ani01 1.5s ease-in-out 0.5s;
+}
+.circle-small.view:nth-child(3) .progress,
+.circle-small.view:nth-child(7) .progress {
+  -webkit-animation: ani16 1.5s ease-in-out 0.5s;
+          animation: ani16 1.5s ease-in-out 0.5s;
+}
+.circle-small.view:nth-child(5) .progress {
+  -webkit-animation: ani03 1.5s ease-in-out 0.5s;
+          animation: ani03 1.5s ease-in-out 0.5s;
 }
 
 .circle-big, .circle-big svg { width: 350px; height: 350px; }
@@ -155,16 +206,76 @@ export default {
   stroke-width: 20px;
   stroke-dasharray: 1005;
   stroke-dashoffset: 776.35;
-  -webkit-animation: big 1.5s ease-in-out;
-          animation: big 1.5s ease-in-out;
+  opacity: 0;
+  transition: opacity;
+  transition-delay: 0.5s;
+  will-change: opacity;
+}
+
+.circle-big.view .progress {
+  opacity: 1;
+  -webkit-animation: big 1.5s ease-in-out 0.5s;
+          animation: big 1.5s ease-in-out 0.5s;
 }
 
 @keyframes big {
-  from {
-    stroke-dashoffset: 1005;
+  from { stroke-dashoffset: 1005; }
+  to { stroke-dashoffset: 776.35; }
+}
+
+@keyframes ani01 {
+  from { stroke-dashoffset: 700; }
+  to { stroke-dashoffset: 544; }
+}
+@keyframes ani16 {
+  from { stroke-dashoffset: 700; }
+  to { stroke-dashoffset: 593; }
+}
+@keyframes ani03 {
+  from { stroke-dashoffset: 700; }
+  to { stroke-dashoffset: 271; }
+}
+
+.legend {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 30px;
+}
+
+.legend .item {
+  margin: 0 15% 140px 15%;
+}
+
+@media (max-width: 1000px) {
+  .legend .item {
+    margin: 0 10% 140px 10%;
   }
-  to {
-    stroke-dashoffset: 776.35;
+}
+
+@media (max-width: 900px) {
+  .legend .item {
+    margin: 0 5% 140px 5%;
+  }
+}
+
+@media (max-width: 800px) {
+  .legend .item {
+    margin: 0 12px 185px 12px;
+  }
+  .Graph04 > .text::before {
+    width: calc(264px / 2);
+    height: calc(174px / 2);
+    top: -20%;
+    left: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .legend .item {
+    margin: 0 12px 210px 12px;
   }
 }
 </style>

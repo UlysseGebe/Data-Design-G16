@@ -129,7 +129,14 @@ export default {
         tooltipEl.style.pointerEvents = 'none';
     }
 
-    new Chart(ctx, this.planetChartData);
+    window.addEventListener('scroll', () => {
+      if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0) {
+        new Chart(ctx, this.planetChartData);
+      }
+    });
+    if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0) {
+      new Chart(ctx, this.planetChartData);
+    }
   }
 }
 </script>

@@ -19,6 +19,24 @@
     --text     : 20pt;
 }
 
+@media (max-width: 800px) {
+    #app {
+        --title    : 50pt;
+        --subtitle : 30pt;
+        --button   : 21pt;
+        --text     : 15pt;
+    }
+}
+
+@media (max-width: 600px) {
+    #app {
+        --title    : 45pt;
+        --subtitle : 25pt;
+        --button   : 16pt;
+        --text     : 12pt;
+    }
+}
+
 .title {
     font-size: var(--title);
     font-family: 'Avenir', sans-serif;
@@ -29,6 +47,8 @@
     font-size: var(--subtitle);
     font-family: 'Avenir', sans-serif;
     font-weight: 900;
+    position: relative;
+    z-index: 9;
 }
 
 .button {
