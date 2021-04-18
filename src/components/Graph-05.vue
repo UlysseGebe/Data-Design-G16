@@ -121,23 +121,45 @@ export default {
         // Display, position, and set styles for font
         tooltipEl.style.opacity = 1;
         tooltipEl.style.position = 'absolute';
-        tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX;
-        tooltipEl.style.left = ctx.offsetWidth * 0.38 - tooltipEl.style.left + 'px'
-        tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY - 12.5 + 'px';
+        if (window.innerWidth > 700) {
+          tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX;
+          tooltipEl.style.left = ctx.offsetWidth * 0.38 - tooltipEl.style.left + 'px'
+          tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY - 12.5 + 'px';
+        }
+        if (window.innerWidth <= 700) {
+          tooltipEl.style.left = position.left * 2 + window.pageXOffset + tooltipModel.caretX;
+          tooltipEl.style.left = ctx.offsetWidth * 0.57 - tooltipEl.style.left + 'px'
+          tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY - 14 + 'px';
+        }
         tooltipEl.style.padding = tooltipModel.padding + 'px ' + tooltipModel.padding + 'px';
         tooltipEl.style.pointerEvents = 'none';
     }
 
     let chartBool = true
+    if (window.innerWidth <= 700) {
+      this.planetChartData.options.scales.y.ticks.font.size = 30
+    }
     window.addEventListener('scroll', () => {
       if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0 && chartBool) {
         new Chart(ctx, this.planetChartData);
         chartBool = false
       }
+      if (window.matchMedia("(orientation: portrait)").matches) {
+        if (ctx.getClientRects()[0].top - window.innerHeight < 0 && chartBool) {
+          new Chart(ctx, this.planetChartData);
+          chartBool = false
+        }
+      }
     });
     if (ctx.getClientRects()[0].top - window.innerHeight / 2 < 0 && chartBool) {
       new Chart(ctx, this.planetChartData);
       chartBool = false
+    }
+    if (window.matchMedia("(orientation: portrait)").matches) {
+      if (ctx.getClientRects()[0].top - window.innerHeight < 0 && chartBool) {
+        new Chart(ctx, this.planetChartData);
+        chartBool = false
+      }
     }
   }
 }
@@ -173,4 +195,5 @@ export default {
   border-radius: 100px;
   margin: 66px auto 0 auto;
 }
+
 </style>

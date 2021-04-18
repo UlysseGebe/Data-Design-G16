@@ -281,7 +281,7 @@ export default {
 
 @media (max-width: 800px) {
   .legend .item {
-    margin: 0 12px 210px 12px;
+    margin: 0 45px 210px 45px;
   }
 }
 </style>

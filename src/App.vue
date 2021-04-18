@@ -156,6 +156,7 @@ export default {
 html, body {
   margin: 0;
   padding: 0;
+  min-width: 700px;
 }
 
 #app {
@@ -179,6 +180,11 @@ html, body {
 }
 
 div[class*="Graph"] { text-align: center }
+
+div[class*="Graph"], #Presentation {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
 .dark * { color: var(--primary-white) }
 
 </style>
